@@ -13,7 +13,7 @@
         android:theme="@style/Theme.CatFood"
         tools:targetApi="31">
         <activity
-            android:name=".subitemcenter"
+            android:name=".adapter.subitemcenter"
             android:exported="false" />
         <activity
             android:name=".activity.MainActivity"
