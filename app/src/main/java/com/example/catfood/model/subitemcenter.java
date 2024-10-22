@@ -1,4 +1,4 @@
-package com.example.catfood.adapter;
+package com.example.catfood.model;
 
 import android.os.Bundle;
 
