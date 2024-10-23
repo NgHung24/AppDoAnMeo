@@ -31,7 +31,7 @@ public class aad_qltaikhoan extends Activity {
         btnqlaitk = findViewById(R.id.btnqlaitk);
         btnttk = findViewById(R.id.btnttk);
         btnxuatdata = findViewById(R.id.btnxuatdata);
-        lvtk = findViewById(R.id.lvtk);
+
 
 
     }
