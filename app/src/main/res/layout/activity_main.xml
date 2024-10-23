@@ -8,7 +8,6 @@
     android:orientation="vertical"
     android:background="#a8dadc"
     tools:context=".activity.MainActivity">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,9 +29,8 @@
                 android:layout_gravity="center_vertical"
                 android:textAlignment="center"
                 android:text="Shop Catfood" />
-
             <Button
-                android:id="@+id/btntruycap"
+                android:id="@+id/btncanhan"
                 android:layout_width="0dp"
                 android:layout_weight="2"
                 android:layout_height="wrap_content"
@@ -63,12 +61,12 @@
                 android:background="#D5CCCC"/>
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btngiohang"
                 android:layout_width="0dp"
                 android:layout_weight="2"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:text="Dỏ hàng" />
+                android:text="Giỏ hàng" />
 
         </LinearLayout>
     </LinearLayout>

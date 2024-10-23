@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.4"
+        android:padding="10dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#1d3557">
+
+            <ImageButton
+                android:id="@+id/imageButton4"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:background="#1d3557"
+                android:padding="5dp"
+                android:src="@drawable/iconexit" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5.5"
+                android:text="QUAY LẠI"
+                android:layout_gravity="center_vertical"
+                android:textSize="20sp"
+                android:textColor="@color/white"></TextView>
+        </LinearLayout>
+    </LinearLayout>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_weight="4"
+        android:layout_height="0dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="0.5"
+        android:layout_height="0dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="2.7"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textSize="25sp"
+            android:padding="10dp"
+            android:textColor="#e63946"
+            android:textStyle="bold"
+            android:text="Tổng: 1000đ"/>
+        <Button
+            android:id="@+id/button14"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text="Chi tiết" />
+        <Button
+            android:id="@+id/button14"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text="Xóa" />
+    </LinearLayout>
+</LinearLayout>
