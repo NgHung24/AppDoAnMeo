@@ -33,7 +33,7 @@
                 android:textColor="@color/black"
                 android:textSize="27dp"
                 android:textStyle="bold"
-                android:text="Tên sản phẩm" />
+                android:text="Tên sản phẩm:" />
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
