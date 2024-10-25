@@ -96,14 +96,14 @@
                 android:textColor="@color/black"
                 android:textSize="15sp" />
 
-            <LinearLayout
+            <RadioGroup
+                android:id="@+id/rgcv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="25dp"
                 android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/cb1"
+                <RadioButton
+                    android:id="@+id/rba"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
@@ -111,9 +111,8 @@
                     android:textSize="20sp"
                     android:checked="false"
                     android:text="Quản trị viên" />
-
-                <CheckBox
-                    android:id="@+id/cb2"
+                <RadioButton
+                    android:id="@+id/rbk"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
@@ -121,7 +120,7 @@
                     android:textSize="20sp"
                     android:checked="true"
                     android:text="Khách hàng" />
-            </LinearLayout>
+            </RadioGroup>
 
             <TextView
                 android:layout_width="match_parent"
