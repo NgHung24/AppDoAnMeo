@@ -16,14 +16,14 @@
             android:background="#1d3557">
 
             <ImageButton
-
+                android:id="@+id/imgbtne"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:scaleType="fitXY"
                 android:background="#1d3557"
                 android:padding="5dp"
-                app:srcCompat="@drawable/iconexit" />
+                android:src="@drawable/iconexit"/>
 
             <TextView
                 android:layout_width="0dp"

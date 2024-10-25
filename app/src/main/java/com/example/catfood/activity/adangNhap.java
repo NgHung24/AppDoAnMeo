@@ -1,0 +1,73 @@
+package com.example.catfood.activity;
+
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Intent;
+import android.database.Cursor;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+
+import com.example.catfood.R;
+import com.example.catfood.model.asqltk;
+
+import java.util.ArrayList;
+
+public class adangNhap extends Activity {
+    EditText ettk, etmk;
+    Button btndn, btndk, btnfg;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.adangnhap);
+
+        ettk = findViewById(R.id.ettk);
+        etmk = findViewById(R.id.etmk);
+        btndn = findViewById(R.id.btndn);
+        btndk = findViewById(R.id.btndk);
+        btnfg = findViewById(R.id.btnfg);
+
+        btndn.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("Range")
+            @Override
+            public void onClick(View view) {
+                String name = ettk.getText().toString();
+                String pa = etmk.getText().toString();
+                asqltk check = new asqltk(adangNhap.this);
+                String sel = "name = ? AND pass = ?";
+                String[] seldk = {name, pa};
+                Cursor c = check.getWritableDatabase().query(check.getTbname(), null, sel, seldk, null, null, null);
+
+                c.moveToFirst();
+                String ab = c.getString(c.getColumnIndex("name"));
+                String bc = c.getString(c.getColumnIndex("pass"));
+                if (ab.equals(name) && bc.equals(pa)) {
+                    String ad = c.getString(c.getColumnIndex("cv"));
+                    Intent intent;
+                    if (ad.equals("Admin")) {
+                        intent = new Intent(adangNhap.this, aadminCenter.class);
+                        Bundle bd = new Bundle();
+                        bd.putString("name",ab);
+                        intent.putExtra("pac",bd);
+                    } else {
+                        intent = new Intent(adangNhap.this, h_MainActivity.class);
+                        Bundle dl = new Bundle();
+                        dl.putString("namee",ab);
+                        intent.putExtra("pacc",dl);
+                    }
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(adangNhap.this, "Tai khoan hoac pass khong dung", Toast.LENGTH_LONG).show();
+                }
+                c.close();
+                ettk.setText("");
+                etmk.setText("");
+            }
+        });
+    }
+}

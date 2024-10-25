@@ -1,6 +1,7 @@
 package com.example.catfood.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
@@ -77,7 +78,8 @@ public class aad_qltaikhoanthem extends Activity {
         btnql.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                Intent ql = new Intent(aad_qltaikhoanthem.this, aad_qltaikhoan.class);
+                startActivity(ql);
             }
         });
     }

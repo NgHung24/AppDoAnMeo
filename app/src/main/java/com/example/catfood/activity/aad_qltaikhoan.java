@@ -20,7 +20,7 @@ import com.example.catfood.model.asqltk;
 import java.util.ArrayList;
 
 public class aad_qltaikhoan extends Activity {
-    ImageButton btnqlaitk, imgtimtk;
+    ImageButton btnqltk, imgtimtk;
     Button btnttk, btnxuatdata;
     EditText ettimtk;
     ListView lvtk;
@@ -33,7 +33,7 @@ public class aad_qltaikhoan extends Activity {
         setContentView(R.layout.aad_quanlytaikhoan);
 
         ettimtk = findViewById(R.id.ettimtk);
-        btnqlaitk = findViewById(R.id.btnqlaitk);
+        btnqltk = findViewById(R.id.btnqltk);
         imgtimtk = findViewById(R.id.imgtimtk);
         btnttk = findViewById(R.id.btnttk);
         btnxuatdata = findViewById(R.id.btnxuatdata);
@@ -59,6 +59,13 @@ public class aad_qltaikhoan extends Activity {
             @SuppressLint("Range")
             @Override
             public void onClick(View view) {
+            }
+        });
+
+        btnqltk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
     }

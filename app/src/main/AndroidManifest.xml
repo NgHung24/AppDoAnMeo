@@ -15,16 +15,7 @@
         android:theme="@style/Theme.CatFood"
         tools:targetApi="31">
         <activity
-            android:name=".activity.axacnhanmua"
-            android:exported="false" />
-        <activity
-            android:name=".adapter.aclvgiohang"
-            android:exported="false" />
-        <activity
-            android:name=".adapter.subitemcenter"
-            android:exported="false" />
-        <activity
-            android:name=".activity.aad_qltaikhoan"
+            android:name=".activity.adangNhap"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,6 +31,18 @@
             android:exported="true" />
         <activity
             android:name=".activity.aad_qltaikhoanthem"
+            android:exported="true" />
+        <activity
+            android:name=".activity.h_MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.aadminCenter"
+            android:exported="true" />
+        <activity
+            android:name=".activity.aad_qltaikhoan"
+            android:exported="true" />
+        <activity
+            android:name=".activity.trangcanhan_Tongdonmua"
             android:exported="true" />
     </application>
 
