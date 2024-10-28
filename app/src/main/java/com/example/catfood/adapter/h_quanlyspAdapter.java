@@ -1,6 +1,4 @@
-package com.example.catfood.activity;
-
-import static androidx.core.content.ContextCompat.startActivity;
+package com.example.catfood.adapter;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -10,15 +8,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.catfood.R;
+import com.example.catfood.activity.h_quanlyspsua;
 import com.example.catfood.model.SanPham;
+import com.example.catfood.model.h_csdl_sp;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class h_quanlyspAdapter extends ArrayAdapter<SanPham> {
@@ -62,10 +60,10 @@ public class h_quanlyspAdapter extends ArrayAdapter<SanPham> {
         Button btnXoa = convertView.findViewById(R.id.button_quanlyspcusitem_Xoa);
 
         btnSua.setOnClickListener(v -> {
-//            SanPham SP = getItem(position);
-//            Intent intent = new Intent(context, h_quanlyspsua.class);
-//           // intent.putExtra("MASP", SP.getMaSP()); // Truyền mã sản phẩm qua Intent
-//            context.startActivity(intent);
+            SanPham SP = getItem(position);
+            Intent intent = new Intent(context, h_quanlyspsua.class);
+           intent.putExtra("MASP", SP.getMaSP()); // Truyền mã sản phẩm qua Intent
+            context.startActivity(intent);
         });
 
         btnXoa.setOnClickListener(v -> {

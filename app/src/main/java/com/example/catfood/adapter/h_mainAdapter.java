@@ -1,4 +1,4 @@
-package com.example.catfood.activity;
+package com.example.catfood.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.catfood.R;
+import com.example.catfood.activity.h_activity_subitemcenter;
 import com.example.catfood.model.SanPham;
 
 import java.util.List;
