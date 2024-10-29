@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -68,6 +69,15 @@ public class aad_qltaikhoan extends Activity {
                 finish();
             }
         });
+
+        // Nhận thông điệp từ Intent
+        Intent intent = getIntent();
+        String mes = intent.getStringExtra("tbao");
+
+        // Hiển thị Toast nếu có thông điệp
+        if (mes != null) {
+            Toast.makeText(this, mes, Toast.LENGTH_LONG).show();
+        }
     }
     @SuppressLint("Range")
     public void xuat(){
@@ -78,6 +88,7 @@ public class aad_qltaikhoan extends Activity {
         if (!c.isAfterLast()) {
             while (c.moveToNext()) {
                 asqltk taiKhoan = new asqltk(aad_qltaikhoan.this);
+                taiKhoan.setCol_id(c.getString(c.getColumnIndex("id")));
                 taiKhoan.setCol_pic(c.getString(c.getColumnIndex("picture")));
                 taiKhoan.setCol_name(c.getString(c.getColumnIndex("name")));
                 taiKhoan.setCol_pas(c.getString(c.getColumnIndex("pass")));

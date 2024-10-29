@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:text="NHẬP SỐ ĐIỆN THOẠI"
         android:textColor="@color/black"
-        android:textSize="35dp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:background="#f1faee"
         android:orientation="vertical"
-        android:padding="35dp"
+        android:padding="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,14 +40,13 @@
             android:id="@+id/etsdt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
+            android:ems="8"
             android:layout_marginBottom="40dp"
             android:textSize="23dp" />
         <TextView
             android:id="@+id/etkqsdt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
             android:layout_marginBottom="40dp"
             android:background="@color/white"
             android:textSize="25dp" />

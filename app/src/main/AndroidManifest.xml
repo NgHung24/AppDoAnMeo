@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -33,6 +34,9 @@
             android:name=".activity.aad_qltaikhoanthem"
             android:exported="true" />
         <activity
+            android:name=".activity.aad_quanlytaikhoanSua"
+            android:exported="false" />
+        <activity
             android:name=".activity.h_MainActivity"
             android:exported="true" />
         <activity
@@ -43,6 +47,12 @@
             android:exported="true" />
         <activity
             android:name=".activity.trangcanhan_Tongdonmua"
+            android:exported="true" />
+        <activity
+            android:name=".activity.adangkykhach"
+            android:exported="true" />
+        <activity
+            android:name=".activity.aquenmatKhau"
             android:exported="true" />
     </application>
 

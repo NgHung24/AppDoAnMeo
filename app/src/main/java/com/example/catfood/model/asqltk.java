@@ -1,24 +1,42 @@
 package com.example.catfood.model;
 
+import static androidx.core.app.ActivityCompat.startActivityForResult;
+
+import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.catfood.activity.aad_qltaikhoan;
 import com.example.catfood.activity.aad_qltaikhoanthem;
+import com.example.catfood.activity.aquenmatKhau;
 
 public class asqltk extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "qltaikhoan.db";
     private static final int DATABASE_VERSION = 1;
     private String tbname = "qltk";
+    private String col_id = "id";
     private String col_name = "name";
     private String col_sdt = "sdt";
     private String col_email = "email";
     private String col_pic = "picture";
     private String col_chucvu = "cv";
     private String col_pas = "pass";
+
+    public String getCol_id() {
+        return col_id;
+    }
+
+    public void setCol_id(String col_id) {
+        this.col_id = col_id;
+    }
 
     public String getTbname() {
         return tbname;
@@ -83,7 +101,8 @@ public class asqltk extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String sql = "CREATE TABLE " + tbname + " ("
-                + col_name + " TEXT PRIMARY KEY , "
+                + col_id + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + col_name + " TEXT, "
                 + col_sdt + " TEXT, "
                 + col_email + " TEXT, "
                 + col_pic + " BLOB, "
@@ -110,11 +129,39 @@ public class asqltk extends SQLiteOpenHelper {
         String mes;
 
         if(dbtk.insert(tbname, null, cl) == -1){
-            mes = "Thêm thất bại";
+            mes = "THẤT BẠI";
         }else{
-            mes = "Đã thêm thành công !!!";
+            mes = "THÀNH CÔNG !!!";
         }
         Toast.makeText(context, mes, Toast.LENGTH_LONG).show();
-    }
+        dbtk.close();
 
+    }
+    public void suatk(Context context,String id, String name){
+        SQLiteDatabase upsql = this.getWritableDatabase();
+        ContentValues cl = new ContentValues();
+        cl.put("name",name);
+        String mes;
+
+        if(upsql.update(tbname, cl, col_id + " = ?", new String[]{id}) == -1){
+            mes = "Cập nhật thât bai" ;
+        }else{
+            mes = "Cập nhật thành công !!!";
+        }
+        Toast.makeText(context, mes, Toast.LENGTH_LONG).show();
+        upsql.close();
+    }
+    public void xoatk(Context context, String id){
+        SQLiteDatabase sqlxoa = this.getWritableDatabase();
+        Intent bay = new Intent(context, aad_qltaikhoan.class);
+        String mes;
+        if(sqlxoa.delete(tbname, col_id +" = ?", new String[]{id}) == -1){
+            mes = "Xóa thất bại";
+        }else{
+            mes = "Xóa thành công";
+        }
+        bay.putExtra("tbao", mes);
+        context.startActivity(bay);
+        sqlxoa.close();
+    }
 }

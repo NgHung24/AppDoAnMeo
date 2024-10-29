@@ -43,10 +43,8 @@ public class adangNhap extends Activity {
                 String[] seldk = {name, pa};
                 Cursor c = check.getWritableDatabase().query(check.getTbname(), null, sel, seldk, null, null, null);
 
-                c.moveToFirst();
-                String ab = c.getString(c.getColumnIndex("name"));
-                String bc = c.getString(c.getColumnIndex("pass"));
-                if (ab.equals(name) && bc.equals(pa)) {
+                if(c != null &&  c.moveToFirst()){
+                    String ab = c.getString(c.getColumnIndex("name"));
                     String ad = c.getString(c.getColumnIndex("cv"));
                     Intent intent;
                     if (ad.equals("Admin")) {
@@ -62,11 +60,25 @@ public class adangNhap extends Activity {
                     }
                     startActivity(intent);
                 } else {
+                    c.close();
                     Toast.makeText(adangNhap.this, "Tai khoan hoac pass khong dung", Toast.LENGTH_LONG).show();
                 }
-                c.close();
                 ettk.setText("");
                 etmk.setText("");
+            }
+        });
+        btndk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent dk = new Intent(adangNhap.this, adangkykhach.class);
+                startActivity(dk);
+            }
+        });
+        btnfg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent fg = new Intent(adangNhap.this, aquenmatKhau.class);
+                startActivity(fg);
             }
         });
     }
