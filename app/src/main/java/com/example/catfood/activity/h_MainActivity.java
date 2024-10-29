@@ -30,7 +30,7 @@ public class h_MainActivity extends AppCompatActivity {
     private ListView listView;
     private ArrayList<SanPham> originalProductList; // Danh sách sản phẩm ban đầu
     private h_mainAdapter adapter; // Adapter chính
-
+    String gg;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,10 +49,20 @@ public class h_MainActivity extends AppCompatActivity {
         btncanhan = findViewById(R.id.btncanhan);
         btngiohang = findViewById(R.id.btngiohang);
 
+        //dđoạn này hiện của hoàng anh để hiển thị tên cho bên trang cá nhân khách
+        Intent ittg = getIntent();
+        Bundle bd = ittg.getBundleExtra("pacc");
+        gg = bd.getString("namee");
+        //////////////////////
+
         btncanhan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ///hoanganh
                 Intent itcn = new Intent(h_MainActivity.this, trangcanhan.class);
+                Bundle g = new Bundle();
+                g.putString("na", gg);
+                itcn.putExtra("paccc",g);
                 startActivity(itcn);
             }
         });
