@@ -27,9 +27,9 @@
         <activity
             android:name=".activity.trangcanhan"
             android:exported="true" />
-        <activity
-            android:name=".activity.agiohang"
-            android:exported="true" />
+<!--        <activity-->
+<!--            android:name=".activity.agiohang"-->
+<!--            android:exported="true" />-->
         <activity
             android:name=".activity.aad_qltaikhoanthem"
             android:exported="true" />
