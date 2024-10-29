@@ -59,7 +59,7 @@ public class h_MainActivity extends AppCompatActivity {
         btngiohang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent itgh = new Intent(h_MainActivity.this, agiohang.class);
+                Intent itgh = new Intent(h_MainActivity.this, ttactivity_giohang_acenter.class);
                 startActivity(itgh);
             }
         });

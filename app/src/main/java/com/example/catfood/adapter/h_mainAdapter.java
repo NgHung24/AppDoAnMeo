@@ -13,7 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.catfood.R;
-import com.example.catfood.activity.h_activity_subitemcenter;
+import com.example.catfood.activity.tt_h_activity_subitemcenter;
 import com.example.catfood.model.SanPham;
 
 import java.util.List;
@@ -57,7 +57,7 @@ public class h_mainAdapter extends ArrayAdapter<SanPham> {
         // Thêm sự kiện click để chuyển sang h_activity_subitemcenter với mã sản phẩm
         convertView.setOnClickListener(v -> {
             SanPham SP = getItem(position);
-            Intent intent = new Intent(context, h_activity_subitemcenter.class);
+            Intent intent = new Intent(context, tt_h_activity_subitemcenter.class);
             intent.putExtra("MASP", SP.getMaSP()); // Truyền mã sản phẩm qua Intent
             context.startActivity(intent);
         });
